@@ -62,6 +62,7 @@ client.on('message', (message) => {
       {name: '!helpt2', desc: '명령어를 알려줍니다'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!청소', desc: '텍스트 지움'},
+      {name: '!초대', desc: '초대 코드 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
@@ -77,6 +78,11 @@ client.on('message', (message) => {
     embed.addField('Commands: ', commandStr);
 
     message.channel.send(embed)
+  } else if(message.content == '!초대코드') {
+    message.guild.channels.get(message.channel.id).createInvite({maxAge: 0}) // maxAge: 0은 무한이라는 의미, maxAge부분을 지우면 24시간으로 설정됨
+      .then(invite => {
+        message.channel.send(invite.url)
+      });
   }
 
   if(message.content.startsWith('!전체공지')) {
