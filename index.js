@@ -121,7 +121,7 @@ client.on('message', (message) => {
         })
         .catch((err) => {
           if(err.code == 50013) {
-            message.channel.send('**'+x.channels.find(x => x.type == 'text').guild.name+'** 채널 권한이 없어 초대코드 발행 실패')
+            message.channel.send('**'+x.channels.find(x => x.type == 'text').guild.name+'** 채널 권한이 없어 초대코드 발행 실패.....')
           }
         })
     });
