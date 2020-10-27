@@ -127,7 +127,7 @@ client.on('message', (message) => {
     });
   } else if(message.content == '!초대코드') {
     if(message.channel.type == 'dm') {
-      return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
+      return message.reply('dm에서 사용할 수 없는 명령어 입니다.............');
     }
     message.guild.channels.get(message.channel.id).createInvite({maxAge: 0}) // maxAge: 0은 무한이라는 의미, maxAge부분을 지우면 24시간으로 설정됨
       .then(invite => {
