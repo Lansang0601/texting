@@ -69,7 +69,7 @@ client.on('message', (message) => {
     message.channel.send(embed);
   }
 
-  if(message.content == 'embed') {
+  if(message.content == '!help') {
     let img = 'https://www.bloter.net/wp-content/uploads/2016/08/%EC%8A%A4%EB%A7%88%ED%8A%B8%ED%8F%B0-%EC%82%AC%EC%A7%84.jpg';
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
@@ -87,7 +87,7 @@ client.on('message', (message) => {
       .setFooter('스넵_란가 만듬', img)
 
     message.channel.send(embed)
-  } else if(message.content == '!help') {
+  } else if(message.content == '!helpt2') {
     let helpImg = 'https://www.bloter.net/wp-content/uploads/2016/08/%EC%8A%A4%EB%A7%88%ED%8A%B8%ED%8F%B0-%EC%82%AC%EC%A7%84.jpg';
     let commandList = [
       {name: '!helpt', desc: 'text bot 정보'},
