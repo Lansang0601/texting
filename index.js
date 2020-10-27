@@ -135,7 +135,7 @@ client.on('message', (message) => {
       })
       .catch((err) => {
         if(err.code == 50013) {
-          message.channel.send('**'+message.guild.channels.get(message.channel.id).guild.name+'** 채널 권한이 없어 초대코드 발행 실패')
+          message.channel.send('**'+message.guild.channels.get(message.channel.id).guild.name+'** 채널 권한이 없어 초대코드 발행 실패..........')
         }
       })
   } else if(message.content.startsWith('!전체공지2')) {
