@@ -8,6 +8,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
+  client.user.setPresence({ game: { name: 'embed2를 쳐보세요.' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -31,11 +32,11 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('pong');
+  if(message.content == 'text bot 안녕') {
+    return message.reply('안녕하세요');
   }
 
-  if(message.content == 'embed') {
+  if(message.content == '!help') {
     let img = 'https://post-phinf.pstatic.net/MjAyMDA0MjRfMjgw/MDAxNTg3NjU3ODYxMTM2.5N8knsVqPXC_srBrLUJK6twnNRVV-WdhFuhMteixn2Ug.3wekrt8dKaETLpcA4A8WWCUsmvdvGgVrbkquhZxKpS8g.JPEG/Erin-Outdoors00.jpg?type=w1200';
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
@@ -53,14 +54,14 @@ client.on('message', (message) => {
       .setFooter('text bot ❤️', img)
 
     message.channel.send(embed)
-  } else if(message.content == 'embed2') {
+  } else if(message.content == '!help2') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: 'ping', desc: '현재 핑 상태(개발중..)'},
-      {name: 'embed', desc: 'embed'},
-      {name: 'embed2', desc: 'embed2 (help)'},
+      {name: '!help', desc: 'text bot의 정보를 알수있음니다'},
+      {name: '!help2', desc: '명령어를 알수있읍니다'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
-      {name: '안녕', desc: '안녕을 치면 text bot이 하세요라고 답합니다.'},
+      {name: '안녕', desc: 'text bot 안녕을 치면 text bot이 안녕하세요라고 답합니다.'},
       {name: '!청소', desc:'!청소(1,2,3,4,5,6,7,8,9,10 등 등.. 숫자)를 적으면 로그에 있는 !청소 1을 하면 방금 적은 1개에 매세지가 삭제됩니다 그럼 !청소 2는 2개가 삭제 되겟죠?(1부터 100까지에 숫자만 뒵니다.)' }
     ];
     let commandStr = '';
