@@ -174,7 +174,7 @@ client.on('message', (message) => {
     }
   } else if(message.content.startsWith('!청소')) {
     if(message.channel.type == 'dm') {
-      return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
+      return message.reply('dm에서 사용할 수 없는 명령어 입니다.......');
     }
     
     if(message.channel.type != 'dm' && checkPermission(message)) return
